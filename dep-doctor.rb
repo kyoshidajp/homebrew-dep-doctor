@@ -5,20 +5,20 @@
 class DepDoctor < Formula
   desc ""
   homepage ""
-  version "0.2.1"
+  version "0.2.2"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/kyoshidajp/dep-doctor/releases/download/v0.2.1/dep-doctor_Darwin_arm64.tar.gz"
-      sha256 "f43e80de4bd28924a61d5fca5b5099d9d62d2529c7500b38bd3285d99c7dfe58"
+    if Hardware::CPU.intel?
+      url "https://github.com/kyoshidajp/dep-doctor/releases/download/v0.2.2/dep-doctor_Darwin_x86_64.tar.gz"
+      sha256 "6ab644dc3686715a9de103871148c302ede1e63c7e4664483a4ce391c5a98119"
 
       def install
         bin.install "dep-doctor"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/kyoshidajp/dep-doctor/releases/download/v0.2.1/dep-doctor_Darwin_x86_64.tar.gz"
-      sha256 "68c3533b5d128146447648e4736cbdfd05637d6ae3513fa54d6ebb1497ba6f6f"
+    if Hardware::CPU.arm?
+      url "https://github.com/kyoshidajp/dep-doctor/releases/download/v0.2.2/dep-doctor_Darwin_arm64.tar.gz"
+      sha256 "14a11f08b0aa94c84ff32cbb64e5aee809deaafa08162c9a9ec681a8712ca688"
 
       def install
         bin.install "dep-doctor"
@@ -27,17 +27,17 @@ class DepDoctor < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kyoshidajp/dep-doctor/releases/download/v0.2.1/dep-doctor_Linux_arm64.tar.gz"
-      sha256 "21b63d95d962bc38124622d21a0ce75b7df92d7fda0f188baaec5038794e6821"
+    if Hardware::CPU.intel?
+      url "https://github.com/kyoshidajp/dep-doctor/releases/download/v0.2.2/dep-doctor_Linux_x86_64.tar.gz"
+      sha256 "d75528e205938bd12a42e02bc0f34ac4059702ddcc5d62a56c7466b3dfc0a8ee"
 
       def install
         bin.install "dep-doctor"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/kyoshidajp/dep-doctor/releases/download/v0.2.1/dep-doctor_Linux_x86_64.tar.gz"
-      sha256 "e9bd7bdbf178c69daf205464f611ae65a2693c23ef900bf855513e1a91542a50"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/kyoshidajp/dep-doctor/releases/download/v0.2.2/dep-doctor_Linux_arm64.tar.gz"
+      sha256 "929cf5a0b54be5a32f87c92d9394ecaafc9b1219ecd72eff9df64f9b00399a5c"
 
       def install
         bin.install "dep-doctor"
