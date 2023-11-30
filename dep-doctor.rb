@@ -5,20 +5,20 @@
 class DepDoctor < Formula
   desc ""
   homepage ""
-  version "1.0.0"
+  version "1.2.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/kyoshidajp/dep-doctor/releases/download/v1.0.0/dep-doctor_Darwin_x86_64.tar.gz"
-      sha256 "91d9fdd31ce898c872e8ff1de5f3a3e2b8b4ac5d4614ddf220f12272fdc6eb00"
+    if Hardware::CPU.arm?
+      url "https://github.com/kyoshidajp/dep-doctor/releases/download/v1.2.0/dep-doctor_Darwin_arm64.tar.gz"
+      sha256 "2d2857dfeb56d98057853f8e736e3ffc87c28f54c200b0ead69a9f502daefe96"
 
       def install
         bin.install "dep-doctor"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/kyoshidajp/dep-doctor/releases/download/v1.0.0/dep-doctor_Darwin_arm64.tar.gz"
-      sha256 "af051971b3445f42f1e5bba5a109b37cfd9db80019179a797bb2ecc815f959bd"
+    if Hardware::CPU.intel?
+      url "https://github.com/kyoshidajp/dep-doctor/releases/download/v1.2.0/dep-doctor_Darwin_x86_64.tar.gz"
+      sha256 "e9e60e9fe1e87f509522acf566acab7f000ec59fb67eccca0eb71b88b72a30e3"
 
       def install
         bin.install "dep-doctor"
@@ -28,16 +28,16 @@ class DepDoctor < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kyoshidajp/dep-doctor/releases/download/v1.0.0/dep-doctor_Linux_arm64.tar.gz"
-      sha256 "2f93587a60c57c993d9179d2dcedd6b0135711f5dc5129e1166cc11e737b869f"
+      url "https://github.com/kyoshidajp/dep-doctor/releases/download/v1.2.0/dep-doctor_Linux_arm64.tar.gz"
+      sha256 "21a0e55f1fc4e0ba63a6add4728ca48927120f8a341d4ba9d1469399a655daf6"
 
       def install
         bin.install "dep-doctor"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/kyoshidajp/dep-doctor/releases/download/v1.0.0/dep-doctor_Linux_x86_64.tar.gz"
-      sha256 "37798b605dcf19418a14b869f7417548806e30e5a9988ff2ea4e60bd1c969244"
+      url "https://github.com/kyoshidajp/dep-doctor/releases/download/v1.2.0/dep-doctor_Linux_x86_64.tar.gz"
+      sha256 "3bc45023056c4e75da875ac9c4f90a90aa59759a5aeb57b0266d8b3bf027d72f"
 
       def install
         bin.install "dep-doctor"
