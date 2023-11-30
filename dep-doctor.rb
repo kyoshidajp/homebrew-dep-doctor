@@ -5,20 +5,20 @@
 class DepDoctor < Formula
   desc ""
   homepage ""
-  version "1.2.0"
+  version "1.2.1"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/kyoshidajp/dep-doctor/releases/download/v1.2.0/dep-doctor_Darwin_arm64.tar.gz"
-      sha256 "2d2857dfeb56d98057853f8e736e3ffc87c28f54c200b0ead69a9f502daefe96"
+      url "https://github.com/kyoshidajp/dep-doctor/releases/download/v1.2.1/dep-doctor_Darwin_arm64.tar.gz"
+      sha256 "3d886c098e0b37d080a57d15cd1fa1944f72107331b4207bdd5e9dc77380f57a"
 
       def install
         bin.install "dep-doctor"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/kyoshidajp/dep-doctor/releases/download/v1.2.0/dep-doctor_Darwin_x86_64.tar.gz"
-      sha256 "e9e60e9fe1e87f509522acf566acab7f000ec59fb67eccca0eb71b88b72a30e3"
+      url "https://github.com/kyoshidajp/dep-doctor/releases/download/v1.2.1/dep-doctor_Darwin_x86_64.tar.gz"
+      sha256 "7bac5fac4971d902ecfd245019ac5d2af9f81be63b8ca868589dbfb754ec8d9f"
 
       def install
         bin.install "dep-doctor"
@@ -27,17 +27,17 @@ class DepDoctor < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kyoshidajp/dep-doctor/releases/download/v1.2.0/dep-doctor_Linux_arm64.tar.gz"
-      sha256 "21a0e55f1fc4e0ba63a6add4728ca48927120f8a341d4ba9d1469399a655daf6"
+    if Hardware::CPU.intel?
+      url "https://github.com/kyoshidajp/dep-doctor/releases/download/v1.2.1/dep-doctor_Linux_x86_64.tar.gz"
+      sha256 "341ace087e2e053aef84104aac2d071f115c7afbd43afb8369c7c9ad7db4f490"
 
       def install
         bin.install "dep-doctor"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/kyoshidajp/dep-doctor/releases/download/v1.2.0/dep-doctor_Linux_x86_64.tar.gz"
-      sha256 "3bc45023056c4e75da875ac9c4f90a90aa59759a5aeb57b0266d8b3bf027d72f"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/kyoshidajp/dep-doctor/releases/download/v1.2.1/dep-doctor_Linux_arm64.tar.gz"
+      sha256 "f212eb81efd479a9f8b7e95dfaba9e6ae268b73c2954d7cdab6ee40a1b417651"
 
       def install
         bin.install "dep-doctor"
